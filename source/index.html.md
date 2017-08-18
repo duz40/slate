@@ -1,239 +1,286 @@
 ---
-title: API Reference
+title: Documentação API
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - http
 
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
-
-search: true
 ---
 
-# Introduction
+# API War-Room V2
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+**Endpoint da API:**
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+[https://stilingueapi.appspot.com](https://stilingueapi.appspot.com)
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# Token de acesso
 
-# Authentication
+**Para resgatar o token de acesso:**
 
-> To authorize, use this code:
+**1) Vá na configuração de um painel de pesquisa personalizada.**
 
-```ruby
-require 'kittn'
+**2) Gere o token de acesso à API (ao final do formulário).**
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+**3) Envie um email para [milton@stilingue.com.br](milton@stilingue.com.br) confirmando a liberação.**
+
+# Requisições HTTPS GET
+
+## Metadados
+
+> Exemplo do link para GET
+
+>metadados
+
+```http
+/wrapi/metadados/<TOKEN>
 ```
 
-```python
-import kittn
+> Substitua `<TOKEN>` pelo seu token de acesso
 
-api = kittn.authorize('meowmeowmeow')
-```
+Requisição responsável por trazer informações a utilização da API pelo cliente.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+# Requisições HTTPS POST
 
-```javascript
-const kittn = require('kittn');
+**Atributos de um post:**
 
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+Atributo | Tipo | Descrição
+-------- | ---- | ---------
+user_url | string | link do perfil que fez a publicação.
+user_image_url | string | link da imagem do perfil que fez a publicação.
+uid | string | identificador do perfil.
+name | string | nome do perfil que publicou.
+username | string | username do perfil que publicou.
+followers | int | número de seguidores do perfil que publicou.
+post_url | string | link da publicação.
+image_url | string | link da imagem da publicação.
+interests | string[ ] | lista de interesses do war-room.
+long_posted_at | long | data de postagem em milisegundos.
+groups | string[ ] | lista de grupos configurados na pesquisa.
+location | string | Estado e Cidade.
+title | string | título da publicação.
+text | string | texto da publicação.
+pid | string | identificador da publicação.
+channel | string | canal da publicação. Exemplo: Facebook, Twitter, Instagram, Portais, YouTube.
+metrics_updated_at | string | última hora que as métricas sociais foram atualizadas.
+mentions | string[ ] | lista de menções que aconteceram na publicação.
+hashtags | string[ ] | lista de hashtags que aconteceram na publicação.
+sentiment | int | sentimento geral do texto. Um é positivo, menos um é negativo e zero é neutro.
+likes | int | número de curtidas/favoritos da publicação.
+shares | int | número de compartilhamentos da publicação.
+comments | string | número de comentários da publicação.
+videoplays | string | número de visualizações da publicação.
+spam | boolean | se a publicação foi marcada como spam.
+hot | float | score customizado que representa a importância da publicação baseado no momento.
+AAA_score | float | score exclusivo do stilingue que representa a importância do perfil.
+favorite | boolean | publicação seja favoritada no war-room.
+replied | boolean | publicação foi respondida pelo war-room.
+verified | boolean | perfil verificado pela rede social.
+gender | string | gênero do perfil que publicou (Marca, Homem ou Mulher).
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Para enviar vários valores em um parâmetro só, utilizar o separador “:” (dois pontos)
 </aside>
 
-# Kittens
+##Publicações
 
-## Get All Kittens
+> Exemplo dos links para POST
 
-```ruby
-require 'kittn'
+>publicações
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+```http
+/wrapi/publicacoes/<TOKEN>
 ```
+> Substitua `<TOKEN>` pelo seu token de acesso
 
-```python
-import kittn
+**Parâmetros:**
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+Parâmetro | Descrição
+--------- | ---------
+date_range | Formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+offset | Requisitar posts a partir de tal posição
+limit | Quantidade de posts por requisição (máximo = 100)
+channels | Twitter, Instagram, Facebook, YouTube, Google+, entre outros
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Organização
+devices | Computador, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações @Brasil
+annotated | `<true ou false>` para filtrar só posts anotados
+
+##Influenciadores
+
+>influenciadores
+
+```http
+/wrapi/influenciadores/<TOKEN>
 ```
+> Substitua `<TOKEN>` pelo seu token de acesso
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+username | 
+channel | Twitter, Instagram, Facebook, YouTube, Google+, ...
+
+##Busca Express [ACESSO RESTRITO]
+
+>busca express
+
+```http
+/wrapi/buscaexpress/<TOKEN>
 ```
+> Substitua `<TOKEN>` pelo seu token de acesso
 
-```javascript
-const kittn = require('kittn');
+**Parâmetros:**
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+Parâmetro | Descrição
+--------- | ---------
+query | OBRIGATÓRIO
+offset | Requisitar posts a partir de tal posição
+limit | Quantidade de posts por requisição (máximo = 20) 
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Termos Correlacionados
+
+>termos correlacionados
+
+```http
+/wrapi/termos/<TOKEN>
 ```
+> Substitua `<TOKEN>` pelo seu token de acesso
 
-> The above command returns JSON structured like this:
+**Parâmetros:**
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Ranking AAA
+
+>ranking AAA
+
+```http
+/wrapi/aaa/<TOKEN>
 ```
+> Substitua `<TOKEN>` pelo seu token de acesso
 
-This endpoint retrieves all kittens.
+**Parâmetros:**
 
-### HTTP Request
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
 
-`GET http://example.com/api/kittens`
+##Distribuição Grupos & Temas
 
-### Query Parameters
+>distribuição grupos & temas
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+```http
+/wrapi/estatisticas/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Distribuição de Termos
+
+>distribuição de termos
+
+```http
+/wrapi/estatisticas_termos/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Sentimento dos Temas
+
+>sentimento dos temas
+
+```http
+/wrapi/sentimento_temas/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+#Observações
+
+* Não é seguro expor a URL de acesso aos resultados em um cliente (ex: acessar via javascript). As chamadas de API devem acontecer em um ambiente fechado.
+* Caso queira bloquear um token de acesso, basta ir em Editar Pesquisa Personalizada > ACESSO À API E PLUGINS DESSA PESQUISA.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Havendo necessidade de configurar mais contas / pesquisas, entrar em contato com <a href="milton@stilingue.com.br">milton@stilingue.com.br</a> para liberação (processo rápido, mas importante para garantir segurança da informação).
 </aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
