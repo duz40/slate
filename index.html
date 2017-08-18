@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Documentação API</title>
+    <link href="images/favicon-16x16.png" rel="icon" type="image/png" />
 
     <style>
       .highlight table td { padding: 5px; }
@@ -198,10 +199,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+      <script src="javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;http&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -209,293 +210,753 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-st.png" class="logo" alt="Logo st" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="http">http</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#api-war-room-v2" class="toc-h1 toc-link" data-title="API War-Room V2">API War-Room V2</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#token-de-acesso" class="toc-h1 toc-link" data-title="Token de acesso">Token de acesso</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#requisicoes-https-get" class="toc-h1 toc-link" data-title="Requisições HTTPS GET">Requisições HTTPS GET</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Delete a Specific Kitten</a>
+                    <a href="#metadados" class="toc-h2 toc-link" data-title="Requisições HTTPS GET">Metadados</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#requisicoes-https-post" class="toc-h1 toc-link" data-title="Requisições HTTPS POST">Requisições HTTPS POST</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#publicacoes" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Publicações</a>
+                  </li>
+                  <li>
+                    <a href="#influenciadores" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Influenciadores</a>
+                  </li>
+                  <li>
+                    <a href="#busca-express-acesso-restrito" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Busca Express [ACESSO RESTRITO]</a>
+                  </li>
+                  <li>
+                    <a href="#termos-correlacionados" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Termos Correlacionados</a>
+                  </li>
+                  <li>
+                    <a href="#ranking-aaa" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Ranking AAA</a>
+                  </li>
+                  <li>
+                    <a href="#distribuicao-grupos-amp-temas" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Distribuição Grupos &amp; Temas</a>
+                  </li>
+                  <li>
+                    <a href="#distribuicao-de-termos" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Distribuição de Termos</a>
+                  </li>
+                  <li>
+                    <a href="#sentimento-dos-temas" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Sentimento dos Temas</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#observacoes" class="toc-h1 toc-link" data-title="Observações">Observações</a>
           </li>
       </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='api-war-room-v2'>API War-Room V2</h1>
+<p><strong>Endpoint da API:</strong></p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p><a href="https://stilingueapi.appspot.com">https://stilingueapi.appspot.com</a></p>
+<h1 id='token-de-acesso'>Token de acesso</h1>
+<p><strong>Para resgatar o token de acesso:</strong></p>
 
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p><strong>1) Vá na configuração de um painel de pesquisa personalizada.</strong></p>
+
+<p><strong>2) Gere o token de acesso à API (ao final do formulário).</strong></p>
+
+<p><strong>3) Envie um email para <a href="milton@stilingue.com.br">milton@stilingue.com.br</a> confirmando a liberação.</strong></p>
+<h1 id='requisicoes-https-get'>Requisições HTTPS GET</h1><h2 id='metadados'>Metadados</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Exemplo do link para GET</p>
+
+<p>metadados</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/metadados/&lt;TOKEN&gt;
+</span></code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Requisição responsável por trazer informações a utilização da API pelo cliente.</p>
+<h1 id='requisicoes-https-post'>Requisições HTTPS POST</h1>
+<p><strong>Atributos de um post:</strong></p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<table><thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_url</td>
+<td>string</td>
+<td>link do perfil que fez a publicação.</td>
+</tr>
+<tr>
+<td>user_image_url</td>
+<td>string</td>
+<td>link da imagem do perfil que fez a publicação.</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>identificador do perfil.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>nome do perfil que publicou.</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>username do perfil que publicou.</td>
+</tr>
+<tr>
+<td>followers</td>
+<td>int</td>
+<td>número de seguidores do perfil que publicou.</td>
+</tr>
+<tr>
+<td>post_url</td>
+<td>string</td>
+<td>link da publicação.</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>link da imagem da publicação.</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>string[ ]</td>
+<td>lista de interesses do war-room.</td>
+</tr>
+<tr>
+<td>long_posted_at</td>
+<td>long</td>
+<td>data de postagem em milisegundos.</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>string[ ]</td>
+<td>lista de grupos configurados na pesquisa.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>Estado e Cidade.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>título da publicação.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>texto da publicação.</td>
+</tr>
+<tr>
+<td>pid</td>
+<td>string</td>
+<td>identificador da publicação.</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>string</td>
+<td>canal da publicação. Exemplo: Facebook, Twitter, Instagram, Portais, YouTube.</td>
+</tr>
+<tr>
+<td>metrics_updated_at</td>
+<td>string</td>
+<td>última hora que as métricas sociais foram atualizadas.</td>
+</tr>
+<tr>
+<td>mentions</td>
+<td>string[ ]</td>
+<td>lista de menções que aconteceram na publicação.</td>
+</tr>
+<tr>
+<td>hashtags</td>
+<td>string[ ]</td>
+<td>lista de hashtags que aconteceram na publicação.</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>int</td>
+<td>sentimento geral do texto. Um é positivo, menos um é negativo e zero é neutro.</td>
+</tr>
+<tr>
+<td>likes</td>
+<td>int</td>
+<td>número de curtidas/favoritos da publicação.</td>
+</tr>
+<tr>
+<td>shares</td>
+<td>int</td>
+<td>número de compartilhamentos da publicação.</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>string</td>
+<td>número de comentários da publicação.</td>
+</tr>
+<tr>
+<td>videoplays</td>
+<td>string</td>
+<td>número de visualizações da publicação.</td>
+</tr>
+<tr>
+<td>spam</td>
+<td>boolean</td>
+<td>se a publicação foi marcada como spam.</td>
+</tr>
+<tr>
+<td>hot</td>
+<td>float</td>
+<td>score customizado que representa a importância da publicação baseado no momento.</td>
+</tr>
+<tr>
+<td>AAA_score</td>
+<td>float</td>
+<td>score exclusivo do stilingue que representa a importância do perfil.</td>
+</tr>
+<tr>
+<td>favorite</td>
+<td>boolean</td>
+<td>publicação seja favoritada no war-room.</td>
+</tr>
+<tr>
+<td>replied</td>
+<td>boolean</td>
+<td>publicação foi respondida pelo war-room.</td>
+</tr>
+<tr>
+<td>verified</td>
+<td>boolean</td>
+<td>perfil verificado pela rede social.</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>gênero do perfil que publicou (Marca, Homem ou Mulher).</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Para enviar vários valores em um parâmetro só, utilizar o separador “:” (dois pontos)
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
+<h2 id='publicacoes'>Publicações</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Exemplo dos links para POST</p>
+
+<p>publicações</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/publicacoes/&lt;TOKEN&gt;
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>Parâmetro</th>
+<th>Descrição</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>date_range</td>
+<td>Formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>offset</td>
+<td>Requisitar posts a partir de tal posição</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Quantidade de posts por requisição (máximo = 100)</td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, entre outros</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Organização</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Computador, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações @Brasil</td>
+</tr>
+<tr>
+<td>annotated</td>
+<td><code>&lt;true ou false&gt;</code> para filtrar só posts anotados</td>
 </tr>
 </tbody></table>
+<h2 id='influenciadores'>Influenciadores</h2>
+<blockquote>
+<p>influenciadores</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/influenciadores/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td></td>
+</tr>
+<tr>
+<td>channel</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+</tbody></table>
+<h2 id='busca-express-acesso-restrito'>Busca Express [ACESSO RESTRITO]</h2>
+<blockquote>
+<p>busca express</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/buscaexpress/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>OBRIGATÓRIO</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Requisitar posts a partir de tal posição</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Quantidade de posts por requisição (máximo = 20)</td>
+</tr>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='termos-correlacionados'>Termos Correlacionados</h2>
+<blockquote>
+<p>termos correlacionados</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/termos/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='ranking-aaa'>Ranking AAA</h2>
+<blockquote>
+<p>ranking AAA</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/aaa/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='distribuicao-grupos-amp-temas'>Distribuição Grupos &amp; Temas</h2>
+<blockquote>
+<p>distribuição grupos &amp; temas</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/estatisticas/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='distribuicao-de-termos'>Distribuição de Termos</h2>
+<blockquote>
+<p>distribuição de termos</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/estatisticas_termos/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='sentimento-dos-temas'>Sentimento dos Temas</h2>
+<blockquote>
+<p>sentimento dos temas</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_temas/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h1 id='observacoes'>Observações</h1>
+<ul>
+<li>Não é seguro expor a URL de acesso aos resultados em um cliente (ex: acessar via javascript). As chamadas de API devem acontecer em um ambiente fechado.</li>
+<li>Caso queira bloquear um token de acesso, basta ir em Editar Pesquisa Personalizada &gt; ACESSO À API E PLUGINS DESSA PESQUISA.</li>
+</ul>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Havendo necessidade de configurar mais contas / pesquisas, entrar em contato com <a href="milton@stilingue.com.br">milton@stilingue.com.br</a> para liberação (processo rápido, mas importante para garantir segurança da informação).
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="http">http</a>
           </div>
       </div>
     </div>
