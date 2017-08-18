@@ -612,3 +612,8 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+.highlight .err {
+  color: #c3c316 !important;
+  font-size: 14px;
+}
