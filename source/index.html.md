@@ -226,7 +226,11 @@ types | Text, Image, Video, Audio
 sentiment | (-1), (0), (1)
 locations | Lista de localizações do Brasil
 
-##Distribuição de Termos
+##Visão Geral
+
+Requisições usadas no visão geral.
+
+###Distribuição de Termos
 
 >distribuição de termos
 
@@ -251,12 +255,341 @@ types | Text, Image, Video, Audio
 sentiment | (-1), (0), (1)
 locations | Lista de localizações do Brasil
 
-##Sentimento dos Temas
+###Sentimento dos Temas
 
 >sentimento dos temas
 
 ```http
 /wrapi/sentimento_temas/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento dos Links
+
+>sentimento dos links
+
+```http
+/wrapi/sentimento_links/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento dos Domínios
+
+>sentimento dos dominios
+
+```http
+/wrapi/sentimento_dominios/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento em Hashtags
+
+>sentimento nas hashtags
+
+```http
+/wrapi/sentimento_hashtags/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento em Tags
+
+>sentimento nas tags
+
+```http
+/wrapi/sentimento_tags/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento por buscas
+
+>sentimento por buscas
+
+```http
+/wrapi/sentimento_buscas/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento por Regiões
+
+>sentimento por regioes
+
+```http
+/wrapi/sentimento_regioes/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Sentimento por grupos
+
+>sentimento por grupos
+
+```http
+/wrapi/sentimento_grupos/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Gráfico de publicações no tempo
+
+> grafico de publicacoes
+
+```http
+/wrapi/linechart/<TOKEN>
+```
+
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+###Visão geral
+
+A maior parte das informações fica nesta requisição
+
+> visao geral
+
+```http
+/wrapi/visao_geral/<TOKEN>
+```
+
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Onde falam
+
+>onde falam
+
+```http
+/wrapi/onde/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Manchetes Sociais
+
+>manchetes sociais
+
+```http
+/wrapi/manchetes/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Temas e Tópicos
+
+>temas e topicos
+
+```http
+/wrapi/temasetopicos/<TOKEN>
+```
+> Substitua `<TOKEN>` pelo seu token de acesso
+
+**Parâmetros:**
+
+Parâmetro | Descrição
+--------- | ---------
+date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
+interests | Lista de Interesses do War-Room
+genders | Homem, Mulher ou Marca
+groups | Título dos grupos disponíveis na pesquisa
+themes | Temas dos grupos disponíveis na pesquisa
+tags | Tags dos grupos disponíveis na pesquisa
+devices | Desktop, Mobile
+types | Text, Image, Video, Audio
+sentiment | (-1), (0), (1)
+locations | Lista de localizações do Brasil
+
+##Top Influenciadores
+
+>top influenciadores
+
+```http
+/wrapi/top_influenciadores/<TOKEN>
 ```
 > Substitua `<TOKEN>` pelo seu token de acesso
 
