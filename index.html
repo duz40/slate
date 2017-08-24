@@ -251,10 +251,19 @@
                     <a href="#distribuicao-grupos-amp-temas" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Distribuição Grupos &amp; Temas</a>
                   </li>
                   <li>
-                    <a href="#distribuicao-de-termos" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Distribuição de Termos</a>
+                    <a href="#visao-geral" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Visão Geral</a>
                   </li>
                   <li>
-                    <a href="#sentimento-dos-temas" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Sentimento dos Temas</a>
+                    <a href="#onde-falam" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Onde falam</a>
+                  </li>
+                  <li>
+                    <a href="#manchetes-sociais" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Manchetes Sociais</a>
+                  </li>
+                  <li>
+                    <a href="#temas-e-topicos" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Temas e Tópicos</a>
+                  </li>
+                  <li>
+                    <a href="#top-influenciadores" class="toc-h2 toc-link" data-title="Requisições HTTPS POST">Top Influenciadores</a>
                   </li>
               </ul>
           </li>
@@ -817,7 +826,9 @@ Para enviar vários valores em um parâmetro só, utilizar o separador “:” (
 <td>Lista de localizações do Brasil</td>
 </tr>
 </tbody></table>
-<h2 id='distribuicao-de-termos'>Distribuição de Termos</h2>
+<h2 id='visao-geral'>Visão Geral</h2>
+<p>Requisições usadas no visão geral.</p>
+<h3 id='distribuicao-de-termos'>Distribuição de Termos</h3>
 <blockquote>
 <p>distribuição de termos</p>
 </blockquote>
@@ -880,11 +891,832 @@ Para enviar vários valores em um parâmetro só, utilizar o separador “:” (
 <td>Lista de localizações do Brasil</td>
 </tr>
 </tbody></table>
-<h2 id='sentimento-dos-temas'>Sentimento dos Temas</h2>
+<h3 id='sentimento-dos-temas'>Sentimento dos Temas</h3>
 <blockquote>
 <p>sentimento dos temas</p>
 </blockquote>
 <pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_temas/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-dos-links'>Sentimento dos Links</h3>
+<blockquote>
+<p>sentimento dos links</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_links/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-dos-dominios'>Sentimento dos Domínios</h3>
+<blockquote>
+<p>sentimento dos dominios</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_dominios/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-em-hashtags'>Sentimento em Hashtags</h3>
+<blockquote>
+<p>sentimento nas hashtags</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_hashtags/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-em-tags'>Sentimento em Tags</h3>
+<blockquote>
+<p>sentimento nas tags</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_tags/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-por-buscas'>Sentimento por buscas</h3>
+<blockquote>
+<p>sentimento por buscas</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_buscas/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-por-regioes'>Sentimento por Regiões</h3>
+<blockquote>
+<p>sentimento por regioes</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_regioes/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='sentimento-por-grupos'>Sentimento por grupos</h3>
+<blockquote>
+<p>sentimento por grupos</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/sentimento_grupos/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='grafico-de-publicacoes-no-tempo'>Gráfico de publicações no tempo</h3>
+<blockquote>
+<p>grafico de publicacoes</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/linechart/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h3 id='visao-geral-2'>Visão geral</h3>
+<p>A maior parte das informações fica nesta requisição</p>
+
+<blockquote>
+<p>visao geral</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/visao_geral/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='onde-falam'>Onde falam</h2>
+<blockquote>
+<p>onde falam</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/onde/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='manchetes-sociais'>Manchetes Sociais</h2>
+<blockquote>
+<p>manchetes sociais</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/manchetes/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='temas-e-topicos'>Temas e Tópicos</h2>
+<blockquote>
+<p>temas e topicos</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/temasetopicos/&lt;TOKEN&gt;
+</span></code></pre>
+<blockquote>
+<p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
+</blockquote>
+
+<p><strong>Parâmetros:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>date_range</td>
+<td>formato <code>&lt;YYYYMMDDhhmm:YYYYMMDDhhmm&gt;</code></td>
+</tr>
+<tr>
+<td>channels</td>
+<td>Twitter, Instagram, Facebook, YouTube, Google+, ...</td>
+</tr>
+<tr>
+<td>interests</td>
+<td>Lista de Interesses do War-Room</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>Homem, Mulher ou Marca</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Título dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>Temas dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags dos grupos disponíveis na pesquisa</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>Desktop, Mobile</td>
+</tr>
+<tr>
+<td>types</td>
+<td>Text, Image, Video, Audio</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>(-1), (0), (1)</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>Lista de localizações do Brasil</td>
+</tr>
+</tbody></table>
+<h2 id='top-influenciadores'>Top Influenciadores</h2>
+<blockquote>
+<p>top influenciadores</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">/wrapi/top_influenciadores/&lt;TOKEN&gt;
 </span></code></pre>
 <blockquote>
 <p>Substitua <code>&lt;TOKEN&gt;</code> pelo seu token de acesso</p>
