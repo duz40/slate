@@ -109,6 +109,7 @@ types | Text, Image, Video, Audio
 sentiment | (-1), (0), (1)
 locations | Lista de localizações @Brasil
 annotated | `<true ou false>` para filtrar só posts anotados
+order_by | date_desc, date_asc, hot, interactions, likes, shares, comments
 
 ##Influenciadores
 
