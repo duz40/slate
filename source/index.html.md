@@ -96,6 +96,7 @@ Para enviar vários valores em um parâmetro só, utilizar o separador “:” (
 Parâmetro | Descrição
 --------- | ---------
 date_range | Formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 offset | Requisitar posts a partir de tal posição
 limit | Quantidade de posts por requisição (máximo = 100)
 channels | Twitter, Instagram, Facebook, YouTube, Google+, entre outros
@@ -144,6 +145,7 @@ query | OBRIGATÓRIO
 offset | Requisitar posts a partir de tal posição
 limit | Quantidade de posts por requisição (máximo = 20) 
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -166,6 +168,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -191,6 +194,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -216,6 +220,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -245,6 +250,7 @@ Requisições usadas no visão geral.
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -270,6 +276,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -295,6 +302,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -320,6 +328,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -345,6 +354,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -370,6 +380,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -395,6 +406,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -420,6 +432,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -445,6 +458,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -471,6 +485,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -499,6 +514,7 @@ A maior parte das informações fica nesta requisição
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -524,6 +540,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -549,6 +566,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -574,6 +592,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
@@ -599,6 +618,7 @@ locations | Lista de localizações do Brasil
 Parâmetro | Descrição
 --------- | ---------
 date_range | formato `<YYYYMMDDhhmm:YYYYMMDDhhmm>`
+last_days | Date_range para o dia X antes de hoje
 channels | Twitter, Instagram, Facebook, YouTube, Google+, ...
 interests | Lista de Interesses do War-Room
 genders | Homem, Mulher ou Marca
